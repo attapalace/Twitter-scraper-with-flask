@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<h1>{% block title %} Twitter Scraper using Flask {% endblock %}</h1>
+
+<form enctype="multipart/form-data" method="POST">
+
+    <div class="note">
+    <label>if you want to search for either one of multiple terms write as (cats OR dogs), if you want to search for exact phrase write as "cats and dogs"</label>
+    </div>
+
+	<div class="first">
+    <label>Search</label>
+    <input type='text' name="search">
+	</div>
+    
+    <div class="second">
+    <label>From Date</label>
+    <input type='text' name="from" placeholder='2021-06-01'>
+	</div>
+
+	<div class="third">
+    <label>Until Date</label>
+    <input type='text' name="until" placeholder='2021-06-10'>
+	</div>
+    
+    <div class="fourth">
+    <label>Max results</label>
+    <input type='text' name="max" value='100'>
+	</div>
+    
+    <input type="submit" value="Submit">
+</form>
+
+<body>
+  
+{% for table in tables %}
+
+{{ table|safe }}
+{% endfor %}
+</body>
+</html>
